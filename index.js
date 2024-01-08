@@ -4,10 +4,10 @@
 
 // require("dotenv").config({ path: ".env" });
 import express from "express";
-import bodyParser from "body-parser";
+// import bodyParser from "body-parser";
 // import cors from "cors";
 // import path from "path";
-import db from "./db/index.js";
+// import db from "./db/index.js";
 // import { failAction } from "./utils/response";
 // import http from "http";
 // import helmet from "helmet";
@@ -19,8 +19,8 @@ const port = process.env.PORT ? process.env.PORT : 2000;
 
 // app.use(helmet());
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
 
 // Access-Control-Allow-Origin
 // app.use(
