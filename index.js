@@ -12,7 +12,7 @@ import express from "express";
 // import http from "http";
 // import helmet from "helmet";
 
-import routes from "./api";
+// import routes from "./api";
 
 const app = express();
 const port = process.env.PORT ? process.env.PORT : 2000;
@@ -34,6 +34,6 @@ const port = process.env.PORT ? process.env.PORT : 2000;
 app.use("/", (req, res) =>
   res.json({ message: "Hello Server Now Working......." })
 );
-app.use("/api", routes);
+// app.use("/api", routes);
 
 app.listen(port, () => console.log(`Server listening on port ${port}`));
