@@ -1,5 +1,5 @@
-import Message from "./messages";
-import { successAction, failAction } from "../utils/response";
+import Message from "./messages.js";
+import { successAction, failAction } from "../utils/response.js";
 export default async function (req, res, next) {
   try {
     let {

@@ -1,6 +1,6 @@
 const ObjectId = require("mongodb").ObjectId;
-import dbService from "../../utils/dbService";
-import Message from "../../utils/messages";
+import dbService from "../../utils/dbService.js";
+import Message from "../../utils/messages.js";
 
 export const list = async (entry) => {
   try {
