@@ -1,10 +1,7 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 /* development connection string */
-const databaseUrl =
-  "mongodb+srv://febackend0001:Ronak123456789@cluster0.yfxobqk.mongodb.net/dbAdlon"; //process.env.ATLAS_URL;
-
-/* local development connection string */
+const databaseUrl = process.env.ATLAS_URL;
 console.log("DB URL:", databaseUrl);
 
 // Mongoose setup with server
@@ -23,5 +20,16 @@ mongoose.connect(
     }
   }
 );
+mongoose.Promise = global.Promise;
+mongoose.connection.on("error", (err) => {
+  console.error(`🚫 Error → : ${err.message}`);
+});
 
-export default mongoose;
+const glob = require("glob");
+const path = require("path");
+
+glob.sync("./models/*.js").forEach(function (file) {
+  require(path.resolve(file));
+});
+
+module.exports = mongoose;

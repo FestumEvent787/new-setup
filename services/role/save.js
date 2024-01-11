@@ -1,9 +1,9 @@
 const ObjectId = require("mongodb").ObjectId;
-import dbService from "../../utils/dbService";
-import Message from "../../utils/messages";
-import { UserRole } from "../../config/constants";
+const dbService = require("../../utils/dbService");
+const Message = require("../../utils/messages");
+const { UserRole } = require("../../config/constants");
 
-export const save = async (entry) => {
+const save = async (entry) => {
   try {
     let {
       user: { _id: userId },
@@ -43,3 +43,5 @@ export const save = async (entry) => {
     throw new Error(error?.message);
   }
 };
+
+module.exports = save;

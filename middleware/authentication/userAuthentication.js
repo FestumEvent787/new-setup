@@ -1,8 +1,8 @@
-import dbService from "../../utils/dbService";
-import { failAction } from "../../utils/response";
-import Message from "../../utils/messages";
+const dbService = require("../../utils/dbService");
+const { failAction } = require("../../utils/response");
+const Message = require("../../utils/messages");
 
-export default async function (req, res, next) {
+const authentication = async function (req, res, next) {
   try {
     const { body, headers, path, originalUrl } = req;
     const { authorization, host } = headers;
@@ -35,4 +35,6 @@ export default async function (req, res, next) {
   } catch (error) {
     return res.status(401).json(failAction(Message.tokenExpire, 401));
   }
-}
+};
+
+module.exports = authentication;

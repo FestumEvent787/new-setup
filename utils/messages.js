@@ -2,7 +2,7 @@
    * @ description : Main module to include all the messages used in project.
 ----------------------------------------------------------------------- */
 
-export default {
+module.exports = {
   accept: "Accepted",
   confirm: "Confirmed",
   success: "Success!",

@@ -1,8 +1,8 @@
 const ObjectId = require("mongodb").ObjectId;
-import dbService from "../../utils/dbService.js";
-import Message from "../../utils/messages.js";
+const dbService = require("../../utils/dbService");
+const Message = require("../../utils/messages");
 
-export const list = async (entry) => {
+const list = async (entry) => {
   try {
     let {
       body: {},
@@ -38,3 +38,5 @@ export const list = async (entry) => {
     throw new Error(error?.message);
   }
 };
+
+module.exports = list;

@@ -1,6 +1,6 @@
 const defaultLimit = process.env.LIMIT || 10;
 
-export const paginationFn = (
+const paginationFn = (
   { sort = null, iPage = 1, iLimit = defaultLimit, holdingSort },
   defaultSortOn = "createdAt"
 ) => {
@@ -15,3 +15,4 @@ export const paginationFn = (
     noOfDocSkip: skip,
   };
 };
+module.exports = paginationFn;

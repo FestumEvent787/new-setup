@@ -1,5 +1,7 @@
-import { Joi } from "../../../utils/schemaValidate";
+const { Joi } = require("../../../utils/schemaValidate");
 
-export const saveSchema = Joi.object({
+const saveSchema = Joi.object({
   vName: Joi.string().required().label("Role Name"),
 });
+
+module.exports = saveSchema;

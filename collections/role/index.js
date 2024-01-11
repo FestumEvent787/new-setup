@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const roleSchema = new mongoose.Schema({
   vName: { type: String },
@@ -11,4 +11,4 @@ const roleSchema = new mongoose.Schema({
   dtUpdatedAt: Number,
 });
 
-export default mongoose.model("tblRole", roleSchema);
+module.exports = mongoose.model("tblRole", roleSchema);

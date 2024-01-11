@@ -1,6 +1,6 @@
-import Message from "./messages.js";
-import { successAction, failAction } from "../utils/response.js";
-export default async function (req, res, next) {
+const Message = require("./messages");
+const { successAction, failAction } = require("../utils/response");
+module.exports = async function (req, res, next) {
   try {
     let {
       body = {},
@@ -64,4 +64,4 @@ export default async function (req, res, next) {
     console.error("catch block error=>", e);
     res.status(400).json(failAction(Message.systemError));
   }
-}
+};

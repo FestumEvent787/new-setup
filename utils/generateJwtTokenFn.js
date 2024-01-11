@@ -1,9 +1,9 @@
-import { failAction } from "./response";
-import jwt from "jsonwebtoken";
+const { failAction } = require("./response");
+const jwt = require("jsonwebtoken");
 
 const jwtAlgo = process.env.JWT_ALGO;
 const jwtKey = process.env.JWT_KEY;
-export const generateJwtTokenFn = async (userIdObj) => {
+const generateJwtTokenFn = async (userIdObj) => {
   return new Promise((resolve, reject) => {
     jwt.sign(userIdObj, jwtKey, { expiresIn: "365d" }, function (err, encode) {
       if (err) {
@@ -14,3 +14,5 @@ export const generateJwtTokenFn = async (userIdObj) => {
     });
   });
 };
+
+module.exports = generateJwtTokenFn;

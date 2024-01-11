@@ -1,12 +1,12 @@
-export const successAction = (data, vMessage = "OK", iCount) => {
+const successAction = (data, vMessage = "OK", iCount) => {
   return { iStatusCode: 200, isStatus: true, iCount, data, vMessage };
 };
 
-export const failAction = (vMessage = "Fail", iStatusCode = 400) => {
+const failAction = (vMessage = "Fail", iStatusCode = 400) => {
   return { iStatusCode, isStatus: false, data: null, vMessage };
 };
 
-export const toTitleCase = (str) => {
+const toTitleCase = (str) => {
   if (str == undefined || str == "undefined" || str == null || str == "") {
     return "";
   } else {
@@ -16,3 +16,5 @@ export const toTitleCase = (str) => {
     });
   }
 };
+
+module.exports = { successAction, failAction, toTitleCase };

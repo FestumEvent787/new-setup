@@ -1,14 +1,14 @@
-import { Router } from "express";
-import commonResolver from "../../../utils/commonResolver";
+const { Router } = require("express");
+const commonResolver = require("../../../utils/commonResolver");
 
 const router = new Router();
 
 // SCHEMA
-import { saveSchema } from "./save";
+const saveSchema = require("./save");
 
 // SERVICES
-import { save } from "../../../services/role/save";
-import { list } from "../../../services/role/list";
+const save = require("../../../services/role/save");
+const list = require("../../../services/role/list");
 
 router.post(
   "/details",
@@ -27,4 +27,4 @@ router.get(
   })
 );
 
-export default router;
+module.exports = router;

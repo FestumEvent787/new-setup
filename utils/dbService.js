@@ -1,10 +1,8 @@
-import collections from "../collections";
-import { paginationFn } from "./pagination";
+const collections = require("../collections");
+const paginationFn = require("./pagination");
 const createOneRecord = async (modelName, data) => {
   try {
-    
     return await collections[modelName](data).save();
-
   } catch (error) {
     console.error("<<<<<<<<<<<<createOneRecord>>>>>>>>>>>>>", modelName, error);
     throw new Error(error);
@@ -168,29 +166,6 @@ const findManyRecordsWithPagination = async (
   }
 };
 
-export const updateBulkRecords = async (modelName, payload) => {
-  return new Promise(async function (resolve, reject) {
-    try {
-      collections[modelName]
-        .bulkWrite(payload)
-        .then((response) => {
-          resolve(true);
-        })
-        .catch((error) => {
-          console.error(error);
-          resolve(false);
-        });
-    } catch (error) {
-      console.error(
-        "<<<<<<<<<<<<updateBulkRecords>>>>>>>>>>>>>",
-        modelName,
-        error
-      );
-      throw new Error(error);
-    }
-  });
-};
-
 const findAllRecordsWithPopulate = async (
   modelName,
   query,
@@ -345,7 +320,6 @@ module.exports = {
   createOneRecord,
   findManyRecordsWithPagination,
   findDistinctKey,
-  updateBulkRecords,
   findLastRecord,
   findAllRecordsWithPopulate,
   findManyRecordsWithPaginationAndPopulate,
